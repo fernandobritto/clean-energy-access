@@ -1,0 +1,8 @@
+/*.js
+/dist/**
+/docs/**
+/build/**
+/coverage/**
+/.webpack/**
+/.serverless/**
+/node_modules/**

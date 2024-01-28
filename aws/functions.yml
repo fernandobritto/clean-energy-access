@@ -1,0 +1,18 @@
+healthCheck:
+  handler: src/functions/healthcheck/healthCheck.handler
+  description: Health check endpoint
+  events:
+    - http:
+        path: energy/health-check
+        method: get
+        cors: true
+        documentation: ${file(docs/endpoints.yml):gatewayHealthCheckDoc}
+checkEligibility:
+  handler: src/functions/checkEligibility/handler.checkEligibility
+  description: Check eligibility endpoint
+  events:
+    - http:
+        path: energy/check-eligibility
+        method: post
+        cors: true
+        documentation: ${file(docs/endpoints.yml):checkEligibilityDoc}

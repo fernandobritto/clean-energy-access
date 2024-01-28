@@ -1,0 +1,47 @@
+gatewayHealthCheckDoc:
+  summary: API Gateway Health Check
+  description: Verifies if the API Gateway is working properly.
+  tags:
+    - Health Check
+  methodResponses:
+    - statusCode: 200
+      responseBody:
+        description: Success. Everything appears to be ok.
+      responseModels:
+        application/json: SuccessResponseWithMessage
+    - statusCode: 400
+      responseBody:
+        description: Bad Request.
+      responseModels:
+        application/json: BadRequestWithMessage
+    - statusCode: 500
+      responseBody:
+        description: Internal Service Error.
+      responseModels:
+        application/json: ErrorResponseWithMessage
+checkEligibilityDoc:
+  summary: Check Eligibility
+  description: Checks if the customer or company is eligible to purchase the product.
+  tags:
+    - Check Eligibility
+  requestBody:
+    description: Check Eligibility Request
+    required: true
+  requestModels:
+    application/json: CheckEligibilityRequestBody
+  methodResponses:
+    - statusCode: 200
+      responseBody:
+        description: Success. Customer or company is eligible.
+      responseModels:
+        application/json: SuccessResponseWithMessage
+    - statusCode: 400
+      responseBody:
+        description: Bad Request.
+      responseModels:
+        application/json: BadRequestWithMessage
+    - statusCode: 500
+      responseBody:
+        description: Internal Service Error.
+      responseModels:
+        application/json: ErrorResponseWithMessage
