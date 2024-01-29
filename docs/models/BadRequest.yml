@@ -7,3 +7,5 @@ content:
       properties:
         message:
           type: string
+          example: Error in eligibility verification service!
+

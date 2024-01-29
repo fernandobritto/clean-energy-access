@@ -1,7 +1,6 @@
 version: '1'
 title: Clean Energy API
-description: Clean Energy backend API Gateway Documentation. All HTTP Errors are default, except for 422, that is used for validation errors and the responses will show the incorrect inputs. Unique attributes are not verified on validation, if you, for example, send a email that is already registered the error will be a generic Bad Request.
-
+description: Clean Energy backend API Documentation. The purpose of this API is the capture and filtering of leads and the verification of the eligibility of customers and companies that wish to carry out the acquisition of our clean energy  and CO2 reduction program.
 servers:
   - url: https://foo.bar
     description: TEMPORARY STAGE - CHANGE THIS URL AND DESCRIPTION
