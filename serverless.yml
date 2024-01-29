@@ -1,11 +1,11 @@
 service: clean-energy-access
 frameworkVersion: '3'
 configValidationMode: error
-useDotenv: true
+
 provider:
   name: aws
   stage: ${opt:stage, 'homolog'}
-  region: ${opt:region, 'us-east-1'}
+  region: ${opt:region, 'sa-east-1'}
   runtime: nodejs18.x
   stackTags:
     Name: ${self:service}

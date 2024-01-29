@@ -1,7 +1,8 @@
 {
   "name": "clean-energy-access",
   "version": "0.1.0",
-  "description": "API for Clean Energy Access",
+  "description": "The purpose of this API is the verification of the eligibility of customers and companies that wish to carry out the acquisition of our clean energy and CO2 reduction program.",
+  "author": "Fernando Britto",
   "license": "UNLICENSED",
   "main": "index.ts",
   "engines": {

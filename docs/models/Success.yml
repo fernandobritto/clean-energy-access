@@ -5,6 +5,12 @@ content:
     schema:
       type: object
       properties:
-        message:
-          type: string
-
+        data:
+          type: object
+          properties:
+            elegivel:
+              type: boolean
+              example: true
+            economiaAnualDeCO2:
+              type: number
+              example: 1159.2

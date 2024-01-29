@@ -7,3 +7,4 @@ content:
       properties:
         message:
           type: string
+          example: Unexpected Error!
