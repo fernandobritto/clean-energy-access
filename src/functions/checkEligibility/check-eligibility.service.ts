@@ -1,4 +1,5 @@
 import { CUSTOMER_CLASS, REASONS_FOR_INELIGIBILITY, TARIFF_MODALITY } from '@common/constants/check-eligibility'
+import { cnpj, cpf } from 'cpf-cnpj-validator'
 import { BadRequest, isHttpError } from 'http-errors'
 
 import { type CheckEligibilityValidator } from './check-eligibility.validator'
@@ -15,11 +16,16 @@ const CONNECTION_TYPE_LIMITS = {
 export class CheckEligibilityService {
   async execute(checkEligibility: CheckEligibilityValidator): Promise<ICheckEligibilityResult> {
     const {
+      numeroDoDocumento: documentNumber,
       tipoDeConexao: connectionType,
       classeDeConsumo: customerClass,
       modalidadeTarifaria: tariffModality,
       historicoDeConsumo: historicalConsumption
     } = checkEligibility
+
+    if (!cnpj.isValid(documentNumber) && !cpf.isValid(documentNumber)) {
+      throw new BadRequest('Invalid document number!')
+    }
 
     try {
       const reasonsForIneligibility = this.getReasonsForIneligibility(
