@@ -10,6 +10,19 @@ describe('CheckEligibilityService', () => {
     service = new CheckEligibilityService()
   })
 
+  it('should return a document number error when the document number is invalid', async () => {
+    const invalidRequest = {
+      ...checkEligibilityStub().fakeRequestBody,
+      numeroDoDocumento: '99999999999'
+    }
+
+    try {
+      await service.execute(invalidRequest)
+    } catch (error) {
+      expect(error.message).toBe('Invalid document number!')
+    }
+  })
+
   it('should return ineligible when the request is invalid', async () => {
     const invalidRequest = {
       ...checkEligibilityStub().fakeRequestBody,
