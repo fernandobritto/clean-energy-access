@@ -1,0 +1,19 @@
+{
+  "javascript.suggest.autoImports": true,
+  "javascript.suggestionActions.enabled": true,
+  "typescript.suggest.autoImports": true,
+  "typescript.suggestionActions.enabled": true,
+  "editor.formatOnSave": true,
+  "eslint.format.enable": true,
+  "editor.autoClosingBrackets": "always",
+  "editor.defaultFormatter": "vscode.typescript-language-features",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+}
