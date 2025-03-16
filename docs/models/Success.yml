@@ -1,0 +1,16 @@
+name: SuccessResponseWithMessage
+description: GET / successful response.
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            elegivel:
+              type: boolean
+              example: true
+            economiaAnualDeCO2:
+              type: number
+              example: 1159.2

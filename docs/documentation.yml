@@ -1,0 +1,12 @@
+version: '1'
+title: Clean Energy API
+description: Clean Energy backend API Documentation. The purpose of this API is the capture and filtering of leads and the verification of the eligibility of customers and companies that wish to carry out the acquisition of our clean energy  and CO2 reduction program.
+servers:
+  - url: https://foo.bar
+    description: TEMPORARY STAGE - CHANGE THIS URL AND DESCRIPTION
+
+models:
+  - ${file(docs/models/Success.yml)}
+  - ${file(docs/models/Error.yml)}
+  - ${file(docs/models/BadRequest.yml)}
+  - ${file(docs/models/CheckEligibilityRequest.yml)}

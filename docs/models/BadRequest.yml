@@ -1,0 +1,11 @@
+name: BadRequestWithMessage
+description: Missing information or invalid parameters.
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Error in eligibility verification service!
+

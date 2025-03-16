@@ -1,0 +1,38 @@
+name: CheckEligibilityRequestBody
+description: POST | The request body for the check eligibility endpoint.
+contentType: application/json
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        numeroDoDocumento:
+          type: string
+          description: Customer or company identification document.
+          example: '28098256000100'
+        tipoDeConexao:
+          type: string
+          description: Type of electrical connection of the establishment.
+          example: bifasico
+        classeDeConsumo:
+          type: string
+          description: Consumption class of the customer or company.
+          example: comercial
+        modalidadeTarifaria:
+          type: string
+          description: Tariff type of the establishment.
+          example: convencional
+        historicoDeConsumo:
+          type: array
+          description: Establishment's consumption history.
+          items:
+            type: number
+            example: [3878, 9760, 5976, 2797, 2481, 5731, 7538, 4392, 7859, 4160, 6941, 4597]
+      required:
+        - numeroDoDocumento
+        - tipoDeConexao
+        - classeDeConsumo
+        - modalidadeTarifaria
+        - historicoDeConsumo
+
+

@@ -1,0 +1,36 @@
+service: clean-energy-access
+frameworkVersion: '3'
+configValidationMode: error
+
+provider:
+  name: aws
+  stage: ${opt:stage, 'homolog'}
+  region: ${opt:region, 'sa-east-1'}
+  runtime: nodejs18.x
+  stackTags:
+    Name: ${self:service}
+    Product: "clean-energy"
+  iam:
+    role:
+      statements: ${file(aws/iamroles.yml)}
+
+package:
+  individually: true
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+  documentation: ${file(docs/documentation.yml)}
+  prune:
+    automatic: true
+    number: 1
+
+functions:
+  - ${file(aws/functions.yml)}
+
+plugins:
+  - serverless-webpack
+  - serverless-prune-plugin
+  - serverless-openapi-documenter
+  - serverless-plugin-resource-tagging
+  - serverless-offline
